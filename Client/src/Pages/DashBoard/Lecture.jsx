@@ -26,7 +26,11 @@ function Lecture() {
 
   useEffect(() => {
     if (!state) Navigate("/Courses");
-    dispatch(getCourseLecture(state._id));
+    async function getAlllecture() {
+      const res = await dispatch(getCourseLecture(state?._id));
+      console.log(res);
+    }
+    getAlllecture();
   }, []);
 
   return (

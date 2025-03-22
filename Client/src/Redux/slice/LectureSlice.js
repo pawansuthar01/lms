@@ -17,12 +17,12 @@ export const getCourseLecture = createAsyncThunk(
         success: (data) => {
           return data?.data?.message;
         },
-
         error: "Failed to fetch lectures",
       });
+
       return (await response).data;
     } catch (error) {
-      toast.error(error?.response?.message);
+      toast.error(error?.response?.data.message);
     }
   }
 );

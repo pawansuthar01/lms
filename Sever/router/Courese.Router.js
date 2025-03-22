@@ -15,23 +15,13 @@ const CourseRouter = Router();
 
 CourseRouter.route("/")
   .get(getAllCourses)
-  .post(
-    isLoggedIn,
-    authorizeRoles("ADMIN"),
-    upload.single("thumbnail"),
-    createCourse
-  )
-  .delete(isLoggedIn, authorizeRoles("ADMIN"), removeLectureById);
+  .post(upload.single("thumbnail"), createCourse)
+  .delete(removeLectureById);
 
 CourseRouter.route("/:id")
-  .get(isLoggedIn, getCourses)
-  .put(isLoggedIn, authorizeRoles("ADMIN"), updateCourses)
-  .delete(isLoggedIn, authorizeRoles("ADMIN"), removeCourse)
-  .post(
-    isLoggedIn,
-    authorizeRoles("ADMIN"),
-    upload.single("lecture"),
-    addLectureUpdate
-  );
+  .get(getCourses)
+  .put(updateCourses)
+  .delete(removeCourse)
+  .post(upload.single("lecture"), addLectureUpdate);
 
 export default CourseRouter;

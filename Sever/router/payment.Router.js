@@ -13,17 +13,16 @@ import {
 } from "../controllers/payment.Controller.js";
 const PaymentRouter = Router();
 
-PaymentRouter.route("/subscribe").post(isLoggedIn, buySubscription);
+PaymentRouter.route("/subscribe").post(buySubscription);
 
-PaymentRouter.route("/verify").post(isLoggedIn, verifySubscription);
+PaymentRouter.route("/verify").post(verifySubscription);
 
 PaymentRouter.route("/unsubscribe").post(
-  isLoggedIn,
   CheckPaymentStatus,
   cancelSubscription
 );
 
-PaymentRouter.route("/razorpay-key").get(isLoggedIn, getRazorpayApiKey);
+PaymentRouter.route("/razorpay-key").get(getRazorpayApiKey);
 
-PaymentRouter.route("/").get(isLoggedIn, authorizeRoles("ADMIN"), allPayments);
+PaymentRouter.route("/").get(allPayments);
 export default PaymentRouter;

@@ -50,7 +50,6 @@ const registerUser = async (req, res, next) => {
         });
 
         if (result) {
-          console.log(result);
           User.avatar.public_id = result.public_id;
           User.avatar.secure_url = result.secure_url;
 
@@ -125,7 +124,7 @@ const logOut = (req, res, next) => {
 };
 const getProfile = async (req, res, next) => {
   try {
-    const User = await user.findById(req.user.id);
+    const User = await user.findById(req.body.id);
 
     res.status(200).json({
       success: true,
@@ -217,7 +216,7 @@ const updatePassword = async (req, res, next) => {
     return next(new AppError("All filed is required", 400));
   }
   try {
-    const User = await user.findById(req.user.id).select("+password");
+    const User = await user.findById(req.body.id).select("+password");
     if (!(await bcrypt.compare(password, User.password))) {
       return next(new AppError("password Does't match", 400));
     }

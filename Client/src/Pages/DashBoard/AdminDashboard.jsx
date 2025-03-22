@@ -86,11 +86,13 @@ function AdminDashboard() {
     }
   }
   useEffect(() => {
-    (async () => {
-      await dispatch(getAllCourseList());
-      await dispatch(getStatsData());
-      await dispatch(getPaymentRecord());
-    })();
+    async function DataLoadAdmin() {
+      const res = await dispatch(getAllCourseList());
+      const res2 = await dispatch(getStatsData());
+      const res3 = await dispatch(getPaymentRecord());
+      console.log(res, res2, res3);
+    }
+    DataLoadAdmin();
   }, []);
   return (
     <HomeLayout>

@@ -17,10 +17,10 @@ const authRouters = Router();
 
 authRouters.post("/register", upload.single("avatar"), registerUser);
 authRouters.post("/login", logIn);
-authRouters.get("/logout", isLoggedIn, logOut);
-authRouters.get("/me", isLoggedIn, getProfile);
+authRouters.get("/logout", logOut);
+authRouters.get("/me", getProfile);
 authRouters.post("/resetPassword", resetPassword);
 authRouters.post("/changePassword/:resetToken", changePassword);
-authRouters.post("/updatePassword", isLoggedIn, updatePassword);
-authRouters.put("/updateUser", isLoggedIn, upload.single("avatar"), updateUser);
+authRouters.post("/updatePassword", updatePassword);
+authRouters.put("/updateUser", upload.single("avatar"), updateUser);
 export default authRouters;

@@ -29,6 +29,7 @@ const getCourses = async (req, res, next) => {
     if (!course) {
       return next(new AppError("course does not exit please try again", 400));
     }
+
     res.status(200).json({
       success: true,
       message: "get courses ",
@@ -168,7 +169,6 @@ const addLectureUpdate = async (req, res, next) => {
 
       // If success
       if (result) {
-
         lectureData.public_id = result.public_id;
         lectureData.secure_url = result.secure_url;
       }

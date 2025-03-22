@@ -63,8 +63,8 @@ const AddLectures = () => {
   }, []);
   return (
     <HomeLayout>
-      <div className=" text-white flex flex-col items-center justify-center gap-10 mx-16 min-h-[90vh]">
-        <div className="flex flex-col gap-5 p-2 shadow-[0_0_10px_black] w-96 rounded-lg">
+      <div className=" text-white flex flex-col items-center justify-center gap-10 max-[780px]:mx-1 mx-16 min-h-[90vh]">
+        <div className="flex flex-col gap-5 p-2 shadow-[0_0_10px_black] max-[780px]:w-full w-96 rounded-lg">
           <header className="flex items-center justify-center relative">
             <button
               onClick={() => navigate(-1)}
@@ -121,7 +121,7 @@ const AddLectures = () => {
               </div>
             )}
 
-            <button className="btn-primary py-1 font-semibold text-lg">
+            <button className="btn btn-primary py-1 font-semibold text-lg">
               Add Lecture
             </button>
           </form>

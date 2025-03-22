@@ -75,10 +75,10 @@ function CoursesCreate() {
 
   return (
     <HomeLayout>
-      <div className="flex justify-center items-center h-[90vh]">
+      <div className="flex justify-center max-[780px]:p-2   max-[780px]:pt-10   items-center min-h-[90vh]">
         <form
           onSubmit={onFormSubmit}
-          className="flex flex-col justify-center gap-5 rounded-sm p-4 text-white w-[700px] my-10 shadow-[0_0_10px_white] relative"
+          className="flex flex-col   justify-center gap-5 rounded-sm p-4 text-white w-[700px] my-10 shadow-[0_0_10px_white] relative"
         >
           <Link
             onClick={() => navigate(-1)}
@@ -88,7 +88,7 @@ function CoursesCreate() {
           </Link>
           <h1 className="text-center text-2xl font-bold ">Create New Course</h1>
 
-          <main className="grid grid-cols-2 gap-x-10">
+          <main className="grid max-[780px]:grid-cols-1 grid-cols-2 gap-x-10">
             <div className="gap-y-6">
               <div>
                 <label htmlFor="image_uploads">

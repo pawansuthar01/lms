@@ -31,17 +31,19 @@ function Login() {
 
     const response = await dispatch(login(LoginData));
 
-    if (response?.payload?.success) navigate("/");
+    if (response?.payload?.success) {
+      navigate("/");
 
-    setLoginData({
-      email: "",
-      password: "",
-    });
+      setLoginData({
+        email: "",
+        password: "",
+      });
+    }
   }
 
   return (
     <HomeLayout>
-      <div className="flex  overflow-x-auto  items-center justify-center h-[90vh]">
+      <div className="flex  overflow-x-auto  p-5  items-center justify-center h-[90vh]">
         <form
           noValidate
           onSubmit={Login}

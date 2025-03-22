@@ -74,9 +74,9 @@ function Checkout() {
     <HomeLayout>
       <form
         onSubmit={handelSubscription}
-        className="min-h-[90vh] flex flex-col justify-center items-center text-white "
+        className="min-h-[90vh]  flex flex-col justify-center items-center text-white "
       >
-        <div className="w-80 h-[26rem] flex flex-col justify-center shadow-[0_0_10px_black] rounded-sm relative">
+        <div className="w-80 max-[780px]:w-[90%]  max-[780px]:h-[30rem] h-[26rem] flex flex-col justify-center shadow-[0_0_10px_black] rounded-sm relative">
           <h1 className="bg-yellow-300 absolute top-0 w-full text-center py-4 text-2xl font-bold  rounded-tl-l grounded-tr-lg">
             Subscription Bundle
           </h1>
@@ -91,6 +91,9 @@ function Checkout() {
             </p>
             <p className="flex items-center justify-center gap-1 text-2xl font-bold text-yellow-300">
               <BiRupee /> <span>499</span>Only
+            </p>
+            <p className="flex items-center justify-center gap-1 text-1xl text-red-400">
+              this project only showcase but payment is system Secure
             </p>
             <div className=" text-gray-500">
               <p>100% refund on cancellation</p>

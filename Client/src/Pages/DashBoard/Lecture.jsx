@@ -31,13 +31,13 @@ function Lecture() {
 
   return (
     <HomeLayout>
-      <div className="flex flex-col gap-10 items-center justify-center min-h-[90vh] py-10 text-white mx-[5%]">
+      <div className="flex flex-col  gap-10 items-center justify-center min-h-[90vh] py-10 text-white mx-[5%]">
         <div className="text-center text-2xl font-semibold text-yellow-300">
           Course Name :{state?.title}
         </div>
         {lecture && lecture.length > 0 ? (
-          <div className="flex justify-center gap-10 w-full">
-            <div className=" space-y-5 w-[22rem] p-2 rounded-lg shadow-[0_0_10px_black]">
+          <div className="flex max-[780px]:flex-col justify-center gap-10 w-full">
+            <div className=" space-y-5 w-[22rem] max-[780px]:w-full  p-2 rounded-lg shadow-[0_0_10px_black]">
               <video
                 src={lecture && lecture[currentVideo]?.lecture?.secure_url}
                 className=" object-fill rounded-tl-lg rounded-tr-lg w-full  max-h-[350px]"
@@ -59,7 +59,7 @@ function Lecture() {
                 </p>
               </div>
             </div>
-            <ul className="w-[22rem] p-2 rounded-sm space-y-5 shadow-[0_0_10px_black]">
+            <ul className="w-[22rem] max-[780px]:w-full p-2 rounded-sm space-y-5 shadow-[0_0_10px_black]">
               <li className="flex justify-between flex-col items-center text-2xl text-yellow-500 font-semibold">
                 <p>Lecture list</p>
                 {role == "ADMIN" && (

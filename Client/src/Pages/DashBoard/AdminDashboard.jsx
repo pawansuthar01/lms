@@ -94,16 +94,16 @@ function AdminDashboard() {
   }, []);
   return (
     <HomeLayout>
-      <div className="min-h-[90vh] pt-5 flex flex-col flex-wrap gap-10 text-white">
+      <div className="min-h-[90vh] pt-5 max-[780px]:pt-20 flex flex-col flex-wrap gap-10 text-white">
         <h1 className="text-center text-5xl font-semibold text-yellow-500">
           Admin Dashboard
         </h1>
-        <div className="grid grid-cols-2 gap-5 m-auto mx-10">
+        <div className="grid grid-cols-2 max-[780px]:grid-cols-1 gap-5 max-[780px]:mx-0 m-auto mx-10">
           <div className="flex flex-col items-center gap-10 p-5 shadow-lg rounded-md">
             <div className="w-80 h-80">
               <Pie data={userData} />
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 max-[780px]:grid-cols-1 gap-5">
               <div className="flex items-center justify-between p-5 gap-5 rounded-md shadow-md">
                 <div className="flex flex-col items-center">
                   <p className="font-semibold">Registered Users</p>
@@ -121,10 +121,10 @@ function AdminDashboard() {
             </div>
           </div>
           <div className="flex flex-col items-center gap-10 p-5 shadow-lg rounded-md">
-            <div className="h-80 w-full relative">
-              <Bar className="absolute bottom-0 h-80 w-full" data={salesData} />
+            <div className="h-80 max-[780px]:h-[250px] w-full relative">
+              <Bar className="absolute bottom-0   w-full" data={salesData} />
             </div>
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 max-[780px]:grid-cols-1 gap-5">
               <div className="flex items-center justify-between p-5 gap-5 rounded-md shadow-md">
                 <div className="flex flex-col items-center">
                   <p className="font-semibold">Subscription Count</p>
@@ -136,7 +136,7 @@ function AdminDashboard() {
                 <div className="flex flex-col items-center">
                   <p className="font-semibold">Total Revenue</p>
                   <h3 className="text-4xl font-bold">
-                    {allPayments?.count * 499}
+                    {allPayments?.count && allPayments?.count * 1}
                   </h3>
                 </div>
                 <GiMoneyStack className="text-green-500 text-5xl" />
@@ -144,23 +144,23 @@ function AdminDashboard() {
             </div>
           </div>
         </div>
-        <div className="mx-[10%] w-[80%] self-center flex flex-col items-center justify-center gap-10 mb-10">
-          <div className="flex w-full items-center justify-between">
-            <h1 className="text-center text-3xl font-semibold">
-              Courses overview
-            </h1>
-            <button
-              onClick={() => {
-                navigate("/course/create");
-              }}
-              className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
-            >
-              Create new course
-            </button>
-          </div>
-          <table className="table overflow-x-scroll">
+        <div className="flex w-full max-[780px]:flex-col gap-2 items-center justify-between">
+          <h1 className="text-center text-3xl font-semibold">
+            Courses overview
+          </h1>
+          <button
+            onClick={() => {
+              navigate("/course/create");
+            }}
+            className="w-fit bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 rounded py-2 px-4 font-semibold text-lg cursor-pointer"
+          >
+            Create new course
+          </button>
+        </div>
+        <div className="mx-2 w-[100%] overflow-x-auto self-center  overflow-hidden  flex flex-col items-center justify-center mb-10">
+          <table className=" table">
             <thead>
-              <tr className="text-white">
+              <tr className="text-white ">
                 <th>S No</th>
                 <th>Course Title</th>
                 <th>Course Category</th>

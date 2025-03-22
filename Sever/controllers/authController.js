@@ -7,6 +7,7 @@ import cloudinary from "cloudinary";
 import Fs from "fs/promises";
 import SendMail from "../utils/SendMail.js";
 import crypto from "crypto";
+
 const cookieOption = {
   maxAge: 7 * 24 * 60 * 60 * 1000,
   httpOnly: true,
@@ -38,7 +39,6 @@ const registerUser = async (req, res, next) => {
         new AppError("user registration failed 'please try again", 401)
       );
     }
-    console.log("file path is >" + JSON.stringify(req.file));
     if (req.file) {
       try {
         const result = await cloudinary.v2.uploader.upload(req.file.path, {
@@ -222,8 +222,8 @@ const updatePassword = async (req, res, next) => {
       return next(new AppError("password Does't match", 400));
     }
     User.password = newPassword;
-    user.password = undefined;
     await User.save();
+    User.password = undefined;
     res.status(200).json({
       success: true,
       message: "password successfully updated ",

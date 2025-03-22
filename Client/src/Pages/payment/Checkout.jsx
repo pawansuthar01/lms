@@ -49,6 +49,8 @@ function Checkout() {
           response.razorpay_subscription_id;
 
         const res = await dispatch(verifyUserPayment(PaymentDetails));
+        console.log(res);
+        console.log(Option);
 
         res?.payload?.success
           ? navigate("/checkout/Success")
@@ -59,8 +61,10 @@ function Checkout() {
     paymentObject.open();
   }
   async function load() {
-    await dispatch(getRazorPayId());
-    await dispatch(purchaseCourseBundle());
+    const res = await dispatch(getRazorPayId());
+    console.log(res);
+    const res2 = await dispatch(purchaseCourseBundle());
+    console.log(res2);
   }
   useEffect(() => {
     load();

@@ -147,7 +147,6 @@ const addLectureUpdate = async (req, res, next) => {
   const { id } = req.params;
   console.log(req.files);
   let lectureData = {};
-
   if (!title || !description) {
     return next(new AppError("Title and Description are required", 400));
   }
@@ -162,14 +161,14 @@ const addLectureUpdate = async (req, res, next) => {
   if (req.file) {
     try {
       const result = await cloudinary.v2.uploader.upload(req.file.path, {
-        folder: "lms", // Save files in a folder named lms
-        chunk_size: 50000000, // 50 mb size
+        folder: "Reel",
+        chunk_size: 104857600,
         resource_type: "video",
       });
 
       // If success
       if (result) {
-        // Set the public_id and secure_url in array
+
         lectureData.public_id = result.public_id;
         lectureData.secure_url = result.secure_url;
       }
@@ -197,7 +196,6 @@ const addLectureUpdate = async (req, res, next) => {
     description,
     lecture: lectureData,
   });
-
   course.numberOfLectures = course.lectures.length;
 
   // Save the course object

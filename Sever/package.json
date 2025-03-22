@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./sever.js"
+    "dev": "nodemon ./server.js",
+    "start": "node ./server.js",
+    "build": "echo 'No build step required'"
   },
   "keywords": [],
   "author": "",

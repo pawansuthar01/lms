@@ -7,6 +7,7 @@ import AppError from "../utils/apperror.js";
 
 const buySubscription = async (req, res, next) => {
   const { id } = req.user; // Extracting id from req.user correctly
+  console.log(id);
   try {
     // Make sure to await the findById method since it's an async operation
     const User = await user.findById(id);

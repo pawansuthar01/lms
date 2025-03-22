@@ -25,12 +25,9 @@ app.use(
     credentials: true,
   })
 );
-setInterval(() => {
+setInterval(async () => {
   try {
-    async function ServerPing() {
-      await axios.get(`${process.env.BACKEND_URL}/ping`);
-    }
-    ServerPing();
+    await axios.get(`${process.env.BACKEND_URL}/ping`);
   } catch (error) {
     console.log("ERROR", error.message);
   }

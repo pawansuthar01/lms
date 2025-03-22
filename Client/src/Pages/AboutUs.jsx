@@ -6,10 +6,10 @@ import { celebrities } from "../constants/CelebrityData";
 function AboutPage() {
   return (
     <HomeLayout>
-      <div className="pl-20 pt-20 flex flex-col text-white">
-        <div className="flex items-center  gap-5 mx-10">
-          <section className="w-1/2  space-y-10">
-            <h1 className=" text-5xl font-semibold text-yellow-500">
+      <div className="pl-20 pt-20  max-[780px]:pl-5  flex flex-col text-white">
+        <div className="flex max-[780px]:flex-col max-[780px]:gap-2 max-[780px]:mx-1   items-center   gap-5 mx-10">
+          <section className="w-1/2  max-[780px]:w-full  space-y-10 max-[780px]:space-y-2 ">
+            <h1 className=" text-5xl  max-[780px]:text-3xl max-[780px]:text-center    font-semibold text-yellow-500">
               Affordable and quality education
             </h1>
             <p className="text-xl text-gray-200">
@@ -20,7 +20,7 @@ function AboutPage() {
               mankind.
             </p>
           </section>
-          <div className="w-1/2">
+          <div className="w-1/2 max-[780px]:w-full">
             <img
               id="test1"
               style={{ filter: "drop-shadow(0 10px 10px  rbg(0 0 0  ))" }}
@@ -30,7 +30,7 @@ function AboutPage() {
             />
           </div>
         </div>
-        <div className="w-1/2 carousel m-auto my-16">
+        <div className="w-1/2 max-[780px]:w-full carousel m-auto my-16">
           {celebrities &&
             celebrities.map((celebrity) => (
               <CarouselSlide

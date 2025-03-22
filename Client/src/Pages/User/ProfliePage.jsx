@@ -24,8 +24,8 @@ function Profile() {
   }
   return (
     <HomeLayout>
-      <div className="min-h-[90vh] flex flex-col justify-center items-center ">
-        <div className="p-4 flex flex-col gap-10 rounded-sm text-white justify-center items-center w-96 shadow-[0_0_10px_black]">
+      <div className="min-h-[90vh] max-[780px]:p-20 flex flex-col justify-center items-center ">
+        <div className="p-4 flex flex-col max-[780px]:gap-5 gap-10 rounded-sm text-white justify-center items-center max-[780px]:w-56 w-96 shadow-[0_0_10px_black]">
           <img
             src={UserData?.avatar?.secure_url}
             alt="user_image"
@@ -34,28 +34,37 @@ function Profile() {
           <h3 className="text-2xl font-semibold text-center capitalize">
             {UserData?.fullName}
           </h3>
-          <div className="grid grid-cols-2">
+          <div className="grid max-[780px]:grid-cols-1  grid-cols-2">
             <p>Email: </p>
             <p>{UserData?.email}</p>
+          </div>
+          <div className="grid  grid-cols-2">
             <p>Role : </p>
-            <p>{UserData?.role}</p>
-            <p>subscription</p>
-            <p>
+            <p>{UserData?.role == "USER" ? "Student" : UserData?.role}</p>
+            <p>subscription {"  "}</p>
+
+            <p
+              className={`${
+                UserData?.subscription?.status == "active"
+                  ? "text-green-400"
+                  : "text-red-400"
+              } pr-10`}
+            >
               {UserData?.subscription?.status == "active"
                 ? "Active"
-                : "inActive"}
+                : " inActive"}
             </p>
           </div>
-          <div className=" w-full flex  justify-between items-center  gap-2">
+          <div className=" w-full flex  max-[780px]:flex-col  justify-between items-center  gap-2">
             <Link
               to="/change/password"
-              className="w-1/2 text-center bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold text-white py-2 px-1"
+              className="w-1/2   max-[780px]:w-full text-center bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold text-white py-2 px-1"
             >
               <button>Change Password</button>
             </Link>
             <Link
               to="/Update/profile"
-              className="w-1/2 text-center bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold text-white py-2 px-1"
+              className="w-1/2 max-[780px]:w-full  text-center bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold text-white py-2 px-1"
             >
               <button>Edit Profile</button>
             </Link>

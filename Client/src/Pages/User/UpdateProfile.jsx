@@ -80,7 +80,7 @@ function UpdateProfile() {
         <form
           noValidate
           onSubmit={OnFormSubmit}
-          className="flex flex-col  justify-center gap-3  rounded-lg p-4 text-white w-96  shadow-[0_0_10px_white] "
+          className="flex flex-col  justify-center gap-3  rounded-lg p-4 text-white w-96 max-[780px]:w-[80%]  shadow-[0_0_10px_white] "
         >
           <h1 className="text-2xl text-center font-bold">Update Page</h1>
           <label htmlFor="image_uploads" className=" cursor-pointer">

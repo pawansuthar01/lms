@@ -54,7 +54,7 @@ function ContactPage() {
 
   return (
     <HomeLayout>
-      <div className="flex justify-center items-center h-[90vh] ">
+      <div className="flex justify-center items-center max-[780px]:p-5 max-[780px]:pt-20 h-[90vh] ">
         <form
           onSubmit={ofFormSubmit}
           className=" flex flex-col items-center justify-center gap-2 p-4  rounded-sm text-white  shadow-[0_0_10px_white] w-[22rem]"

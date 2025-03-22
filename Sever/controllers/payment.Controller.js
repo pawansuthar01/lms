@@ -1,7 +1,7 @@
 import Payment from "../module/payment.module.js";
 import user from "../module/user.module.js";
-import { razorpay } from "../sever.js";
 import crypto from "crypto";
+import { razorpay } from "../server.js";
 
 import AppError from "../utils/apperror.js";
 

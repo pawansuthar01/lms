@@ -1,6 +1,7 @@
 import cookieParser from "cookie-parser";
 import express from "express";
 import cors from "cors";
+import axios from "axios";
 import morgan from "morgan";
 
 import authRouters from "./router/auth.Router.js";
@@ -24,8 +25,22 @@ app.use(
     credentials: true,
   })
 );
+setInterval(() => {
+  try {
+    async function ServerPing() {
+      await axios.get(`${process.env.BACKEND_URL}/ping`);
+    }
+    ServerPing();
+  } catch (error) {
+    console.log("ERROR", error.message);
+  }
+}, 10000);
+
 app.use("/ping", (req, res) => {
-  res.status(200).send("is updated");
+  res.status(200).json({
+    success: true,
+    message: "pong..",
+  });
 });
 
 app.use("/api/v1/user", authRouters);

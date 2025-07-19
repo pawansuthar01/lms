@@ -126,6 +126,6 @@ For any queries, reach out:
 
 web:[pawan kumar](https://pawansuthar.in/)
 
-📧 Email: your-email@example.com
+📧 Email: mail@pawansuthar.in
 
 🐙 GitHub: [pawan kumar](https://github.com/pawansuthar01/)

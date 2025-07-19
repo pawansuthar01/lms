@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+
 # LMS Project
 
 ## 📌 Project Overview
@@ -122,9 +123,9 @@ Contributions are welcome! Feel free to submit issues or PRs.
 ## 📞 Contact
 
 For any queries, reach out:
+
 web:[pawan kumar](https://pawansuthar.in/)
+
 📧 Email: your-email@example.com
+
 🐙 GitHub: [pawan kumar](https://github.com/pawansuthar01/)
-=======
-"# lms" 
->>>>>>> 2645aa126a796827ecf1a4c03e566a09d8a48075
